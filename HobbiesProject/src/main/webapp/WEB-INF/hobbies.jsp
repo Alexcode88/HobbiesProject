@@ -7,7 +7,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>Hobbies page</title>
 	</head>
 	<body>
 		<h1>
@@ -16,7 +16,17 @@
 		<ul>
 			<c:forEach var="hobby" items="${hobbyList}">
 				<li>
-					<c:out value="${hobby.getName()}" > </c:out>
+					<div>
+						<c:out value="${hobby.getName()}" > </c:out>
+					</div>
+					<ul>
+						<c:forEach var="user" items="${hobby.getUsers()}">
+							<li>
+								<c:out value="${user.getFirstname()}"></c:out>
+								<c:out value="${user.getLastname()}"></c:out>
+							</li>
+						</c:forEach>
+					</ul>
 				</li>
 			</c:forEach>
 		</ul>

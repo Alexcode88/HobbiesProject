@@ -56,7 +56,8 @@ public class HobbiesController {
 							   RedirectAttributes redirectAttributes ) {
 		
 		if ( result.hasErrors() ) {
-			redirectAttributes.addFlashAttribute( "errorMessage", "You need to provide the identifier. The name must be lesser than 100 characters long!" );
+			return "hobbies.jsp";
+			//redirectAttributes.addFlashAttribute( "errorMessage", "You need to provide the identifier. The name must be lesser than 100 characters long!" );
 		}
 		else {
 			Hobby currentHobby = hobbyService.getHobbyById( hobby.getIdentifier() );
